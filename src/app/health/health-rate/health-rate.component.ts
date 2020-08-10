@@ -6,6 +6,7 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./health-rate.component.css']
 })
 export class HealthRateComponent implements OnInit {
+
   @Input() propertyRated: string;
   @Input() functionToExec: (i: number) => void;
   constructor() { }

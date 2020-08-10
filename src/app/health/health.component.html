@@ -1,5 +1,15 @@
 <h3>Skin</h3>
 <app-health-rate [propertyRated]="'skin-health'"
-                 [functionToExec]="() => {return setSkinRating(i)}"</app-health-rate>
+                 [functionToExec]="setSkinRating"></app-health-rate>
+<!-- setSkinRating without the () gives the function itself as a parameter -->
+<h4>Skin rating {{skinRating?"for today is " + skinRating:"is not set yet"}}</h4>
 
-<h4 (click)="0">Skin rating is {{skinRating?skinRating:"not set yet"}}</h4>
+<h3>Gut</h3>
+<app-health-rate [propertyRated]="'gut-health'"
+                 [functionToExec]="setGutRating"></app-health-rate>
+<h4>Gut rating {{gutRating?"for today is " + gutRating:"is not set yet"}}</h4>
+
+<h3>Hair</h3>
+<app-health-rate [propertyRated]="'hair-health'"
+                 [functionToExec]="setHairRating"></app-health-rate>
+<h4>Hair rating {{hairRating?"for today is " + hairRating:"is not set yet"}}</h4>

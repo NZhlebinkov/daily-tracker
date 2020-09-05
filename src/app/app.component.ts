@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as firebase from "firebase/app";
 import "firebase/database";
-
+  
 
 @Component({
   selector: 'app-root',
@@ -10,6 +10,7 @@ import "firebase/database";
 })
 export class AppComponent implements OnInit {
   title = 'daily-tracker';
+  database: firebase.database.Database;
 
   ngOnInit() {
     var firebaseConfig = {
@@ -23,10 +24,10 @@ export class AppComponent implements OnInit {
     };
     firebase.initializeApp(firebaseConfig);
 
-    var database = firebase.database();
+    this.database = firebase.database();
   
     const preObject = document.getElementById('object');
-    const dbRefObject = database.ref().child('object');
+    const dbRefObject = this.database.ref().child('object');
   
     dbRefObject.on('value', snap => console.log(snap.val()));
   }

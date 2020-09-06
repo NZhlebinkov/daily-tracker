@@ -13,6 +13,7 @@ export class HealthComponent implements OnInit {
   gutRating: number;
   hairRating: number;
   dbRefSkinRating: firebase.database.Reference;
+  dbRefGutRating: firebase.database.Reference;
 
   constructor() {
   }
@@ -22,6 +23,7 @@ export class HealthComponent implements OnInit {
     this.setGutRating = this.setGutRating.bind(this);
     this.setHairRating = this.setHairRating.bind(this);
     this.dbRefSkinRating = firebase.database().ref().child("skinRating");
+    this.dbRefGutRating = firebase.database().ref().child("gutRating");
     this.dbRefSkinRating.on('value', snap => console.log("Skin Rating: " + snap.val()));
   }
 
@@ -32,6 +34,7 @@ export class HealthComponent implements OnInit {
 
   setGutRating(i: number): void {
     this.gutRating = i + 1;
+    this.dbRefGutRating.set(i+1);
   }
 
   setHairRating(i: number): void {

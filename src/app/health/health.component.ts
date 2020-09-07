@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { formatDate } from '@angular/common'
 import { AppComponent } from '../app.component';
 import * as firebase from "firebase/app";
 import "firebase/database";
@@ -14,16 +15,19 @@ export class HealthComponent implements OnInit {
   hairRating: number;
   dbRefSkinRating: firebase.database.Reference;
   dbRefGutRating: firebase.database.Reference;
+  dbRefHairRating: firebase.database.Reference;
 
   constructor() {
   }
 
   ngOnInit(): void {
+    var todayString = formatDate(Date.now(),"dd-mm-yyyy",); 
     this.setSkinRating = this.setSkinRating.bind(this); // Since I am calling this function from app-health-rate
     this.setGutRating = this.setGutRating.bind(this);
     this.setHairRating = this.setHairRating.bind(this);
-    this.dbRefSkinRating = firebase.database().ref().child("skinRating");
+    this.dbRefSkinRating = firebase.database().ref("/"+todayString | date: '').child("skinRating");
     this.dbRefGutRating = firebase.database().ref().child("gutRating");
+    this.dbRefHairRating = firebase.database().ref().child("hairRating");
     this.dbRefSkinRating.on('value', snap => console.log("Skin Rating: " + snap.val()));
   }
 
@@ -39,5 +43,6 @@ export class HealthComponent implements OnInit {
 
   setHairRating(i: number): void {
     this.hairRating = i + 1;
+    this.dbRefHairRating.set(i+1);
   }
 }

@@ -21,13 +21,13 @@ export class HealthComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    var todayString = formatDate(Date.now(),"dd-mm-yyyy",); 
+    var todayString = formatDate(Date.now(),"y-MM-dd", 'en-CA'); // Using Canadian locale in order to get the wanted date format
     this.setSkinRating = this.setSkinRating.bind(this); // Since I am calling this function from app-health-rate
     this.setGutRating = this.setGutRating.bind(this);
     this.setHairRating = this.setHairRating.bind(this);
-    this.dbRefSkinRating = firebase.database().ref("/"+todayString | date: '').child("skinRating");
-    this.dbRefGutRating = firebase.database().ref().child("gutRating");
-    this.dbRefHairRating = firebase.database().ref().child("hairRating");
+    this.dbRefSkinRating = firebase.database().ref(todayString).child("skinRating");
+    this.dbRefGutRating = firebase.database().ref(todayString).child("gutRating");
+    this.dbRefHairRating = firebase.database().ref(todayString).child("hairRating");
     this.dbRefSkinRating.on('value', snap => console.log("Skin Rating: " + snap.val()));
   }
 

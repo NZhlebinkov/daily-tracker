@@ -1,0 +1,6 @@
+#skin-rating::after {
+    background-color: aqua;
+    position: absolute;
+    content: "?";
+    padding: 20 20 20 20;
+}

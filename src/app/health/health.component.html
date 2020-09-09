@@ -1,6 +1,7 @@
 <h3>Skin</h3>
 <app-health-rate [propertyRated]="'skin-health'"
-                 [functionToExec]="setSkinRating"></app-health-rate>
+                 [functionToExec]="setSkinRating"
+                 id="skin-rating"></app-health-rate>
 <!-- setSkinRating without the () gives the function itself as a parameter -->
 <h4>Skin rating {{skinRating?"for today is " + skinRating:"is not set yet"}}</h4>
 

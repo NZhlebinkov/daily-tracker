@@ -1,6 +1,19 @@
-#skin-rating::after {
-    background-color: aqua;
-    position: absolute;
+#skin-rating > span {
+    background-color: rgb(255, 196, 0);
+    position: relative;
     content: "?";
-    padding: 20 20 20 20;
+    left: 20px;
+    top: -20px;
+    padding: 10px 15px 10px 15px;
+    border-radius: 50%;
+}
+
+#skin-rating::after {
+    background-color: rgb(255, 196, 0);
+    position: relative;
+    content: "?";
+    left: 20px;
+    top: -20px;
+    padding: 10px 15px 10px 15px;
+    border-radius: 50%;
 }

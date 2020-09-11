@@ -1,14 +1,21 @@
-#skin-rating > span {
+#skin-rating > .tooltip:hover::after {
+    background-color: rgb(155, 155, 155);
+    position: relative;
+    content: "This is a very long sentence to show that it shows up after the tooltip icon";
+    padding: 20px 25px 20px 25px;
+    border-radius: 15px;
+}
+
+.tooltip {
     background-color: rgb(255, 196, 0);
     position: relative;
-    content: "?";
     left: 20px;
     top: -20px;
     padding: 10px 15px 10px 15px;
     border-radius: 50%;
 }
 
-#skin-rating::after {
+/* #skin-rating::after {
     background-color: rgb(255, 196, 0);
     position: relative;
     content: "?";
@@ -16,4 +23,4 @@
     top: -20px;
     padding: 10px 15px 10px 15px;
     border-radius: 50%;
-}
+} */

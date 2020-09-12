@@ -1,9 +1,14 @@
-#skin-rating > .tooltip:hover::after {
+#skin-rating > .tooltip:hover ~ #skin-legend {
+    display: inline;
+}
+
+#skin-legend {
+    display: none;
     background-color: rgb(155, 155, 155);
     position: relative;
-    content: "This is a very long sentence to show that it shows up after the tooltip icon";
     padding: 20px 25px 20px 25px;
     border-radius: 15px;
+    left: 20px;
 }
 
 .tooltip {
@@ -11,7 +16,7 @@
     position: relative;
     left: 20px;
     top: -20px;
-    padding: 10px 15px 10px 15px;
+    padding: 10px 1em 10px 1em;
     border-radius: 50%;
 }
 

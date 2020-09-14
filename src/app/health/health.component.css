@@ -1,4 +1,4 @@
-#skin-rating > .tooltip:hover ~ #skin-legend {
+#skin-rating > .tooltip:hover + #skin-legend {
     display: inline;
 }
 

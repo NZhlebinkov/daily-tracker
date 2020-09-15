@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import * as constants from '../constants-health';
 
 @Component({
   selector: 'app-health-rate',
@@ -6,7 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./health-rate.component.css']
 })
 export class HealthRateComponent implements OnInit {
-
+  constants = constants;
   @Input() propertyRated: string;
   @Input() functionToExec: (i: number) => void;
   constructor() { }

@@ -1,12 +1,19 @@
-#skin-rating > .tooltip:hover + #skin-legend {
+#skin-rating > .tooltip:hover + #skin-legend,
+#gut-rating > .tooltip:hover + #gut-legend,
+#hair-rating > .tooltip:hover + #hair-legend  { 
+    /* Do I want to do this with JS instead to be able to quickly add other categories? */
     display: inline;
 }
 
-#skin-legend {
+#skin-legend,
+#gut-legend,
+#hair-legend {
     display: none;
     background-color: rgb(155, 155, 155);
     position: relative;
     padding: 20px 25px 20px 25px;
+    left: 10px;
+    top: -50px;
     border-radius: 15px;
     left: 20px;
 }

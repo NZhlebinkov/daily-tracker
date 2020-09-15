@@ -1,0 +1,32 @@
+export const GUT_LEGEND_1: string = 'Explanation for gut rating 1';
+export const GUT_LEGEND_2: string = 'Explanation for gut rating 2';
+export const GUT_LEGEND_3: string = 'Explanation for gut rating 3';
+export const GUT_LEGEND_4: string = 'Explanation for gut rating 4';
+export const GUT_LEGEND_5: string = 'Explanation for gut rating 5';
+export const GUT_LEGEND_6: string = 'Explanation for gut rating 6';
+export const GUT_LEGEND_7: string = 'Explanation for gut rating 7';
+export const GUT_LEGEND_8: string = 'Explanation for gut rating 8';
+export const GUT_LEGEND_9: string = 'Explanation for gut rating 9';
+export const GUT_LEGEND_10: string = 'Explanation for gut rating 10';
+
+export const SKIN_LEGEND_1: string = 'Explanation for skin rating 1';
+export const SKIN_LEGEND_2: string = 'Explanation for skin rating 2';
+export const SKIN_LEGEND_3: string = 'Explanation for skin rating 3';
+export const SKIN_LEGEND_4: string = 'Explanation for skin rating 4';
+export const SKIN_LEGEND_5: string = 'Explanation for skin rating 5';
+export const SKIN_LEGEND_6: string = 'Explanation for skin rating 6';
+export const SKIN_LEGEND_7: string = 'Explanation for skin rating 7';
+export const SKIN_LEGEND_8: string = 'Explanation for skin rating 8';
+export const SKIN_LEGEND_9: string = 'Explanation for skin rating 9';
+export const SKIN_LEGEND_10: string = 'Explanation for skin rating 10';
+
+export const HAIR_LEGEND_1: string = 'Explanation for hair rating 1';
+export const HAIR_LEGEND_2: string = 'Explanation for hair rating 2';
+export const HAIR_LEGEND_3: string = 'Explanation for hair rating 3';
+export const HAIR_LEGEND_4: string = 'Explanation for hair rating 4';
+export const HAIR_LEGEND_5: string = 'Explanation for hair rating 5';
+export const HAIR_LEGEND_6: string = 'Explanation for hair rating 6';
+export const HAIR_LEGEND_7: string = 'Explanation for hair rating 7';
+export const HAIR_LEGEND_8: string = 'Explanation for hair rating 8';
+export const HAIR_LEGEND_9: string = 'Explanation for hair rating 9';
+export const HAIR_LEGEND_10: string = 'Explanation for hair rating 10';

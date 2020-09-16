@@ -2,27 +2,20 @@
 <app-health-rate [propertyRated]="'skin'"
                  [functionToExec]="setSkinRating"
                  id="skin-rating">
-                <span tooltip class="tooltip">?</span>
-                <span skin-legend id="skin-legend">
-                </span>
                 </app-health-rate>
 <!-- setSkinRating without the () gives the function itself as a parameter -->
 <h4>Skin rating {{skinRating?"for today is " + skinRating:"is not set yet"}}</h4>
 
 <h3>Gut</h3>
-<app-health-rate [propertyRated]="'gut-health'"
+<app-health-rate [propertyRated]="'gut'"
                  [functionToExec]="setGutRating"
                  id="gut-rating">
-                <span tooltip class="tooltip">?</span>
-                <span skin-legend id="gut-legend">Legend: 1 - ...</span>
                 </app-health-rate>
 <h4>Gut rating {{gutRating?"for today is " + gutRating:"is not set yet"}}</h4>
 
 <h3>Hair</h3>
-<app-health-rate [propertyRated]="'hair-health'"
+<app-health-rate [propertyRated]="'hair'"
                  [functionToExec]="setHairRating"
                  id="hair-rating">
-                <span tooltip class="tooltip">?</span>
-                <span skin-legend id="hair-legend">Legend: 1 - ...</span>
                 </app-health-rate>
 <h4>Hair rating {{hairRating?"for today is " + hairRating:"is not set yet"}}</h4>

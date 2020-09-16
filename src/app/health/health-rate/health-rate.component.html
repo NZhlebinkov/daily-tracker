@@ -5,7 +5,12 @@
 <span *ngFor="let n of numSequence(10); let i=index">
   <label [for]="i + ' ' + propertyRated">{{'_' + (i+1) + ','}}</label>
 </span>
-{{constants.GUT_LEGEND_1}} 
+<span class="tooltip">?</span>
+<span [id]="propertyRated + '-legend'">
+  Legend placeholder
+  <!-- <div *ngFor="let n of numSequence(10); let i=index">
+    {{constants."propertyRated"}}
+  </div> -->
+</span>
+<!-- {{constants.GUT_LEGEND_1}}  -->
 <!-- I'll add the legend using propertyRated, uppercase pipe and *ngFor -->
-<ng-content select="[tooltip]"></ng-content>
-<ng-content select="[skin-legend]"></ng-content>

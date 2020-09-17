@@ -6,11 +6,14 @@
   <label [for]="i + ' ' + propertyRated">{{'_' + (i+1) + ','}}</label>
 </span>
 <span class="tooltip">?</span>
-<span [id]="propertyRated + '-legend'">
-  Legend placeholder
-  <!-- <div *ngFor="let n of numSequence(10); let i=index">
-    {{constants."propertyRated"}}
-  </div> -->
+<span #legend [id]="propertyRated + '-legend'">
+  <span *ngFor="let n of numSequence(10); let i = index;">
+    {{i}} - {{(legend.id | uppercase) + '_' + i}}
+
+    
+  <!-- 1 - {{eval("propertyRated | uppercase + '_LEGEND_' + index")}} -->
+    <!-- {{constants."propertyRated"}} -->
+  </span>
 </span>
 <!-- {{constants.GUT_LEGEND_1}}  -->
 <!-- I'll add the legend using propertyRated, uppercase pipe and *ngFor -->

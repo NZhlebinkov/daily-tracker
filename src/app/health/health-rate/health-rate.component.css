@@ -12,10 +12,9 @@
     background-color: rgb(155, 155, 155);
     position: relative;
     padding: 20px 25px 20px 25px;
-    left: 10px;
+    left: 500px;
     top: -50px;
     border-radius: 15px;
-    left: 20px;
 }
 
 .tooltip {

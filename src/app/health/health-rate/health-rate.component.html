@@ -1,9 +1,9 @@
 <span *ngFor="let n of numSequence(10); let i=index">
-  <input type="radio" [name]=propertyRated [id]="i + ' '+ propertyRated" (click)="functionToExec(i)"/>
+  <input type="radio" [name]=propertyRated [id]="i + '-'+ propertyRated" (click)="functionToExec(i)"/>
 </span>
 <br>
 <span *ngFor="let n of numSequence(10); let i=index">
-  <label [for]="i + ' ' + propertyRated">{{'_' + (i+1) + ','}}</label>
+  <label [for]="i + '-' + propertyRated">{{'_' + (i+1) + ','}}</label>
 </span>
 <span class="tooltip">?</span>
 <div [id]="propertyRated + '-legend'">

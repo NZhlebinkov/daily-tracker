@@ -20,26 +20,24 @@ export class HealthComponent implements OnInit {
   constructor() {
   }
 
-  // setDbRef(dbRef: firebase.database.Reference, rating: number) { // Here I'll set the three dbRefs to the right attributes to reduce code duplication
-
-  // }
+  setDbRef(dbRefName: string, ratingName: string, todayString: string) { // Here I set the dbRefs to the right attributes to reduce code duplication
+    this[dbRefName] = firebase.database().ref(todayString).child(ratingName)
+    this[dbRefName].once("value", snap => {
+      if(snap.val()) {
+        console.log(ratingName + ": " + snap.val())
+        this[ratingName] = snap.val()
+      }
+    })
+  }
 
   ngOnInit(): void {
     var todayString = formatDate(Date.now(),"y-MM-dd", 'en-CA'); // Using Canadian locale in order to get the wanted date format
     this.setSkinRating = this.setSkinRating.bind(this); // Since I am calling this function from app-health-rate
     this.setGutRating = this.setGutRating.bind(this);
     this.setHairRating = this.setHairRating.bind(this);
-    this.dbRefSkinRating = firebase.database().ref(todayString).child("skinRating");
-    this.dbRefGutRating = firebase.database().ref(todayString).child("gutRating");
-    this.dbRefHairRating = firebase.database().ref(todayString).child("hairRating");
-
-    this.dbRefGutRating.once("value", snap => {
-      if(snap.val()) {
-        console.log("Gut Rating: " + snap.val())
-        this.gutRating = snap.val()
-      }
-    })
-    // this.dbRefSkinRating.on('value', snap => console.log("Skin Rating: " + snap.val()));
+    this.setDbRef("dbRefSkinRating", "skinRating",todayString)
+    this.setDbRef("dbRefGutRating", "gutRating",todayString)
+    this.setDbRef("dbRefHairRating", "hairRating",todayString)
   }
 
   setSkinRating(i: number): void {

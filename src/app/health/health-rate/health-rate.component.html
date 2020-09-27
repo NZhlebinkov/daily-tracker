@@ -8,10 +8,10 @@
 <span class="tooltip">?</span>
 <div [id]="propertyRated + '-legend'">
   <div *ngFor="let n of numSequence(10); let i = index;">
-    <ng-template [ngIf]="(propertyRated | uppercase) +'_LEGEND_' + i" let-x="ngIf">
+    <ng-template [ngIf]="(propertyRated | uppercase) +'_LEGEND_' + (i+1)" let-x="ngIf">
     <!-- This is desugared microsyntax. E.g. 
          *ngIf="exp as value" turns to <ng-template [ngIf]="exp" let-value="ngIf"> -->
-      <div>{{constants[x]}}</div> 
+      <div>{{i+1}} - {{constants[x]}}</div> 
       <!-- Properties can be accessed using square brackets too.
            constants.SKIN_LEGEND_1 is the same as constants['SKIN_LEGEND_1'] -->
     </ng-template>  

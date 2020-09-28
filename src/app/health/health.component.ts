@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { formatDate } from '@angular/common'
 import { AppComponent } from '../app.component';
+import * as constants from './constants-health'
 import * as firebase from "firebase/app";
 import "firebase/database";
 
@@ -10,6 +11,7 @@ import "firebase/database";
   styleUrls: ['./health.component.css']
 })
 export class HealthComponent implements OnInit {
+  constants = constants
   skinRating: number;
   gutRating: number;
   hairRating: number;

@@ -5,6 +5,11 @@
                 </app-health-rate>
 <!-- setSkinRating without the () gives the function itself as a parameter -->
 <h4>Skin rating {{skinRating?"for today is " + skinRating:"is not set yet"}}</h4>
+<div *ngIf="skinRating">
+    <ng-template [ngIf]="'SKIN_LEGEND_' + skinRating" let-x="ngIf">
+        {{skinRating}} - {{constants[x]}}
+    </ng-template>
+</div>
 
 <h3>Gut</h3>
 <app-health-rate [propertyRated]="'gut'"

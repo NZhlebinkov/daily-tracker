@@ -1,13 +1,8 @@
-.tooltip:hover + #skin-legend,
-.tooltip:hover + #gut-legend,
-.tooltip:hover + #hair-legend  { 
-    /* Do I want to do this with JS instead to be able to quickly add other categories? */
-    display: block;
+.tooltip:hover + [id$="-legend"] {
+    display: block !important;
 }
 
-#skin-legend,
-#gut-legend,
-#hair-legend {
+[id$="-legend"] {
     display: none;
     background-color: rgb(155, 155, 155);
     position: absolute;

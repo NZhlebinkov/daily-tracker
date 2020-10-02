@@ -1,9 +1,14 @@
 .tooltip:hover + [id$="-legend"] {
     display: block !important;
 }
-input:hover ~ [id$="SingleLegend"], label:hover ~ [id$="SingleLegend"]{
+span:hover ~ [id$="SingleLegend"]{
     display: block !important;
 }
+
+[id$="SingleLegend"] {
+    display: none;
+}
+
 [id$="-legend"] {
     display: none;
     background-color: rgb(155, 155, 155);

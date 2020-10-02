@@ -1,11 +1,11 @@
 <span *ngFor="let n of numSequence(10); let i=index">
-  <input type="radio" [name]=propertyRated [id]="i + '-'+ propertyRated" (click)="functionToExec(i)"/>
+  <input (mouseover)="legendSet(i, propertyRated)" type="radio" [name]=propertyRated [id]="i + '-'+ propertyRated" (click)="functionToExec(i)"/>
 </span>
 <br>
 <span *ngFor="let n of numSequence(10); let i=index">
-  <label [mouseover]="legendSet(i, propertyRated)" [for]="i + '-' + propertyRated">{{'_' + (i+1) + ','}}</label>
+  <label (mouseover)="legendSet(i, propertyRated)" [for]="i + '-' + propertyRated">{{'_' + (i+1) + ','}}</label>
 </span>
-<span class="tooltip">?</span>
+<label class="tooltip">?</label>
 <div [id]="propertyRated + '-legend'">
   <div *ngFor="let n of numSequence(10); let i = index;">
     <ng-template [ngIf]="(propertyRated | uppercase) +'_LEGEND_' + (i+1)" let-x="ngIf">
@@ -19,4 +19,4 @@
 </div>
 
 
-<div [id]="propertyRated+'SingleLegend'">Span</div>
+<div [id]="propertyRated+'SingleLegend'"></div>

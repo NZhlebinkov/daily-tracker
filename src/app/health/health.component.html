@@ -17,6 +17,11 @@
                  id="gut-rating">
                 </app-health-rate>
 <h4>Gut rating {{gutRating?"for today is " + gutRating:"is not set yet"}}</h4>
+<div *ngIf="gutRating">
+    <ng-template [ngIf]="'GUT_LEGEND_' + gutRating" let-x="ngIf">
+        {{gutRating}} - {{constants[x]}}
+    </ng-template>
+</div>
 
 <h3>Hair</h3>
 <app-health-rate [propertyRated]="'hair'"
@@ -24,3 +29,8 @@
                  id="hair-rating">
                 </app-health-rate>
 <h4>Hair rating {{hairRating?"for today is " + hairRating:"is not set yet"}}</h4>
+<div *ngIf="hairRating">
+    <ng-template [ngIf]="'HAIR_LEGEND_' + hairRating" let-x="ngIf">
+        {{hairRating}} - {{constants[x]}}
+    </ng-template>
+</div>

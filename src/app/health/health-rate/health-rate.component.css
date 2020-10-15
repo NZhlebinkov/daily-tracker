@@ -19,11 +19,41 @@ span:hover ~ [id$="SingleLegend"]{
     border-radius: 15px;
 }
 
+.radio-input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.radio-checkmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: rgb(255, 196, 0);
+    border-radius: 50%;
+}
+
+.radio-container {
+    display: inline-flex;
+    padding: 20px, 20px;
+    width: 20px;
+    margin: 3px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.radio-number {
+    margin: auto;
+    padding-top: 2px;
+}
+
 .tooltip {
     background-color: rgb(255, 196, 0);
     position: relative;
     left: 20px;
-    top: -20px;
+    top: 0px;
     padding: 10px 1em 10px 1em;
     border-radius: 50%;
 }

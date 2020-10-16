@@ -1,6 +1,4 @@
-.tooltip:hover + [id$="-legend"] {
-    display: block !important;
-}
+
 span:hover ~ [id$="SingleLegend"]{
     display: block !important;
 }
@@ -19,11 +17,33 @@ span:hover ~ [id$="SingleLegend"]{
     border-radius: 15px;
 }
 
+.tooltip {
+    background-color: #ffc400;
+    position: relative;
+    left: 20px;
+    top: 0px;
+    padding: 10px 1em 10px 1em;
+    border-radius: 50%;
+}
+
+.tooltip:hover {
+    background-color: #dcb01d;
+}
+
+.tooltip:hover + [id$="-legend"] {
+    display: block !important;
+}
+
+/* Edit the radio buttons */
 .radio-input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
 }
+
+/* .radio-input:checked ~ .radio-checkmark {
+
+} */
 
 .radio-checkmark {
     position: relative;
@@ -31,8 +51,28 @@ span:hover ~ [id$="SingleLegend"]{
     left: 0;
     height: 20px;
     width: 20px;
-    background-color: rgb(255, 196, 0);
+    background-color: #ffc400;
     border-radius: 50%;
+}
+
+.radio-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    width: 8px;
+    height: 8px;
+    left: 6px;
+    top: 6px;
+    background-color: #ffffff;
+    border-radius: 50%;
+}
+
+.radio-input:checked ~ .radio-checkmark:after {
+    display: block;
+}
+
+.radio-container:hover .radio-checkmark {
+    background-color: #dcb01d;
 }
 
 .radio-container {
@@ -47,13 +87,4 @@ span:hover ~ [id$="SingleLegend"]{
 .radio-number {
     margin: auto;
     padding-top: 2px;
-}
-
-.tooltip {
-    background-color: rgb(255, 196, 0);
-    position: relative;
-    left: 20px;
-    top: 0px;
-    padding: 10px 1em 10px 1em;
-    border-radius: 50%;
 }

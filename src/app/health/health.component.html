@@ -4,33 +4,39 @@
                  id="skin-rating">
                 </app-health-rate>
 <!-- setSkinRating without the () gives the function itself as a parameter -->
-<h4>Skin rating {{skinRating?"for today is " + skinRating:"is not set yet"}}</h4>
-<div *ngIf="skinRating">
+<div *ngIf="skinRating; else skinElse" class="skin-today">
     <ng-template [ngIf]="'SKIN_LEGEND_' + skinRating" let-x="ngIf">
-        {{skinRating}} - {{constants[x]}}
+        Skin rating for today is {{skinRating}} - {{constants[x]}}
     </ng-template>
 </div>
+<ng-template #skinElse>
+    <div class="skin-today">Skin rating not set yet</div>
+</ng-template>
 
 <h3>Gut</h3>
 <app-health-rate [propertyRated]="'gut'"
                  [functionToExec]="setGutRating"
                  id="gut-rating">
                 </app-health-rate>
-<h4>Gut rating {{gutRating?"for today is " + gutRating:"is not set yet"}}</h4>
-<div *ngIf="gutRating">
+<div *ngIf="gutRating; else gutElse" class="gut-today">
     <ng-template [ngIf]="'GUT_LEGEND_' + gutRating" let-x="ngIf">
-        {{gutRating}} - {{constants[x]}}
+        Gut rating for today is {{gutRating}} - {{constants[x]}}
     </ng-template>
 </div>
+<ng-template #gutElse>
+    <div class="gut-today">Gut rating not set yet</div>
+</ng-template>
 
 <h3>Hair</h3>
 <app-health-rate [propertyRated]="'hair'"
                  [functionToExec]="setHairRating"
                  id="hair-rating">
                 </app-health-rate>
-<h4>Hair rating {{hairRating?"for today is " + hairRating:"is not set yet"}}</h4>
-<div *ngIf="hairRating">
+<div *ngIf="hairRating; else hairElse" class = "hair-today">
     <ng-template [ngIf]="'HAIR_LEGEND_' + hairRating" let-x="ngIf">
-        {{hairRating}} - {{constants[x]}}
+        Hair rating for today is {{hairRating}} - {{constants[x]}}
     </ng-template>
 </div>
+<ng-template #hairElse>
+    <div class="hair-today">Hair rating is not set yet</div>
+</ng-template>

@@ -21,7 +21,15 @@ export class HealthRateComponent implements OnInit {
 
   legendSet(i: number, propertyRated: string) {
     var legendStringSrc = propertyRated.toUpperCase() +'_LEGEND_' + (i+1)
-    document.getElementById(propertyRated + "SingleLegend").textContent=(i+1) + ' - ' + constants[legendStringSrc]
+    var element = document.getElementById(propertyRated + "SingleLegend")
+    element.textContent=(i+1) + ' - ' + constants[legendStringSrc]
+
+    window.onmousemove = function (e) {
+      var x = e.clientX,
+          y = e.clientY;
+      element.style.top = (y - 60) + 'px';
+      element.style.left = (1/4*x + 60) + 'px';
+  };
   }
 
 }

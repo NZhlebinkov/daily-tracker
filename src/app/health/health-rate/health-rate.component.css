@@ -1,6 +1,10 @@
 
 span:hover ~ [id$="SingleLegend"]{
     display: block !important;
+    position: fixed;
+    /* background-color: beige; */
+    /* padding: 10px; */
+    font-style: italic;
 }
 
 [id$="SingleLegend"] {
@@ -18,6 +22,10 @@ span:hover ~ [id$="SingleLegend"]{
 }
 
 .tooltip {
+    display: none !important;
+
+
+
     background-color: #ffc400;
     position: relative;
     left: 20px;
@@ -40,10 +48,6 @@ span:hover ~ [id$="SingleLegend"]{
     opacity: 0;
     cursor: pointer;
 }
-
-/* .radio-input:checked ~ .radio-checkmark {
-
-} */
 
 .radio-checkmark {
     position: relative;

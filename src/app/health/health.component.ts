@@ -4,6 +4,7 @@ import { AppComponent } from '../app.component';
 import * as constants from './constants-health'
 import * as firebase from "firebase/app";
 import "firebase/database";
+import { health as dbAddress } from '../db-addresses';
 
 @Component({
   selector: 'app-health',
@@ -12,6 +13,7 @@ import "firebase/database";
 })
 export class HealthComponent implements OnInit {
   constants = constants;
+  dbAddress = dbAddress;
   ratingTypes = ['skin','gut','hair'];
   skinRating: number;
   gutRating: number;
@@ -23,8 +25,8 @@ export class HealthComponent implements OnInit {
   constructor() {
   }
 
-  setDbRef(dbRefName: string, ratingName: string, todayString: string) { // Here I set the dbRefs to the right attributes to reduce code duplication
-    this[dbRefName] = firebase.database().ref(todayString).child(ratingName);
+  setDbRef(dbRefName: string, ratingName: string, address: string) { // Here I set the dbRefs to the right attributes to reduce code duplication
+    this[dbRefName] = firebase.database().ref(address).child(ratingName);
     this[dbRefName].once("value", snap => {
       if(snap.val()) {
         // console.log(ratingName + ": " + snap.val());
@@ -35,15 +37,16 @@ export class HealthComponent implements OnInit {
 
   ngOnInit(): void {
     var todayString = formatDate(Date.now(),"y-MM-dd", 'en-CA'); // Using Canadian locale in order to get the wanted date format
+    var address: string = this.dbAddress + todayString;
     this.setSkinRating = this.setSkinRating.bind(this); // Since I am calling this function from app-health-rate
     this.setGutRating = this.setGutRating.bind(this);
     this.setHairRating = this.setHairRating.bind(this);
-    this.setDbRef("dbRefSkinRating", "skinRating",todayString);
-    this.setDbRef("dbRefGutRating", "gutRating",todayString);
-    this.setDbRef("dbRefHairRating", "hairRating",todayString);
-    firebase.database().ref(todayString).once("value", snapshot  => { // Gets a snapshot specifically of an object in the database with
-                                                                      // the same name as in todayString (for optimisation, so as not to get the whole database)
-      if (snapshot.exists()) { // If there is no object with same name is in todayString, a snapshot would still be returned, with false in snapshot.exists()
+    this.setDbRef("dbRefSkinRating", "skinRating",address);
+    this.setDbRef("dbRefGutRating", "gutRating",address);
+    this.setDbRef("dbRefHairRating", "hairRating",address);
+    firebase.database().ref(address).once("value", snapshot  => { // Gets a snapshot specifically of an object in the database with
+                                                                  // the same name as in address (for optimisation, so as not to get the whole database)
+      if (snapshot.exists()) { // If there is no object with same name is in address, a snapshot would still be returned, with false in snapshot.exists()
         this.checkmarksSet(snapshot.val());
       }
     });

@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HealthComponent } from './health/health.component';
 import { HealthRateComponent } from './health/health-rate/health-rate.component';
 import { ImportantUrgentComponent } from './important-urgent/important-urgent.component';
+import { TaskCategoryComponent } from './important-urgent/task-category/task-category.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HealthComponent,
     HealthRateComponent,
-    ImportantUrgentComponent
+    ImportantUrgentComponent,
+    TaskCategoryComponent
   ],
   imports: [
     BrowserModule,

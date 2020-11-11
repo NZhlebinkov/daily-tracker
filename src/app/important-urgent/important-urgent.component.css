@@ -1,0 +1,7 @@
+#wrapper {
+    display: grid;
+    grid-template-columns: [important-start] 2fr [important-end] 1fr;
+    grid-template-rows: [urgent-start] 2fr [urgent-end] 1fr;
+    width: 600px;
+    background-color: teal;
+}

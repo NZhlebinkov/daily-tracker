@@ -7,6 +7,7 @@ import { HealthComponent } from './health/health.component';
 import { HealthRateComponent } from './health/health-rate/health-rate.component';
 import { ImportantUrgentComponent } from './important-urgent/important-urgent.component';
 import { TaskCategoryComponent } from './important-urgent/task-category/task-category.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { TaskCategoryComponent } from './important-urgent/task-category/task-cat
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

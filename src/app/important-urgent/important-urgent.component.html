@@ -1,5 +1,13 @@
 <div id="wrapper">
     <div id="important-urgent">
+        <!-- <form [formGroup]="iu" (ngSubmit)="addTask(iu,iu.value)"> -->
+
+        <!-- </form> -->
+        <!-- <input type="text" name="testAdd" onblur="addTask(iu,.value)"/> -->
+        <form [formGroup]="taskInputs" (ngSubmit)="addTask('iu')">
+            <input id="name" type="text" formControlName="iu">
+            <input type="submit">
+        </form>
         Filler
     </div>
     <div id="important-not-urgent">
@@ -13,4 +21,6 @@
         Filler
 
     </div>
+    <!-- <input type="text" name="testAdd" [formControl]=""/> -->
+    
 </div>
